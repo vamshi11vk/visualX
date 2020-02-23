@@ -213,6 +213,7 @@ class _HomePageState extends State<HomePage> {
       new Task('CMRCET', 240, Color(0xff990099)),
       new Task('CMRIT', 176, Color(0xff109618)),
       new Task('CMREC', 150, Color(0xfffdbe19)),
+      new Task('CMRECS', 150, Color(0xfffdbe19)),
     ];
 
     var linesalesdata = [
