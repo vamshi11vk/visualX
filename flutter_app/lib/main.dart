@@ -491,6 +491,7 @@ class Task {
   int taskvalue;
   Color colorval;
   String s=",hey bro";
+  String st=",visualx";
 
   Task(this.task, this.taskvalue, this.colorval);
 }
