@@ -25,11 +25,11 @@ class FirstRoute extends StatelessWidget{
        // backgroundColor: Colors.black,
       ),
         home: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/one.gif"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.44), BlendMode.dstATop))),
+            //decoration: BoxDecoration(
+              //  image: DecorationImage(
+                //    image: AssetImage("images/one.gif"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.44), BlendMode.dstATop))),
             child: Scaffold(
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.black54,
                 appBar: AppBar(
                   backgroundColor: Colors.teal,
                   title: Text('visualX',
@@ -56,13 +56,14 @@ color:Color.fromRGBO(300, 0, 0, 0.8),
                   child: Text(''),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/graph.jpg"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.70), BlendMode.dstATop)
+                        image: AssetImage("images/bg.jpg"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.30), BlendMode.dstATop)
                     ),
                     color: Colors.black,
                   ),
               ),
               ListTile(
-                  title: Text('Item 1',
+                trailing:Icon(Icons.save),
+                  title: Text('Saved Charts',
                     style: TextStyle(
                     fontFamily: 'Comfortaa',
                     fontSize: 20.0,
@@ -70,14 +71,24 @@ color:Color.fromRGBO(300, 0, 0, 0.8),
                     fontWeight: FontWeight.bold,
                   ),),
                   onTap: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context)=> HomePage()),
+    );
+    // Update the state of the app
+    // ...
+    // Then close the drawer
+
                     // Update the state of the app
                     // ...
                     // Then close the drawer
-                    Navigator.pop(context);
+                    //Navigator.pop(context);
                   },
+
               ),
               ListTile(
-                  title: Text('Item 2',
+                trailing:Icon(Icons.add_to_photos),
+                  title: Text('Add new data',
                     style: TextStyle(
                       fontFamily: 'Comfortaa',
                       fontSize: 20.0,
@@ -85,88 +96,22 @@ color:Color.fromRGBO(300, 0, 0, 0.8),
                       fontWeight: FontWeight.bold,
                     ),),
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=> HomePage()),
+                    );
+
                     // Update the state of the app
                     // ...
                     // Then close the drawer
-                    Navigator.pop(context);
+                   // Navigator.pop(context);
                   },
               ),
               ]
             ),
                 ),
         ),
-                floatingActionButton: Column
-                  (
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Center(
-                        child: FloatingActionButton(
-                          heroTag: "btn1",
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context)=> HomePage()),
-                            );
-                          },
-                          tooltip: 'Saved',
-                          backgroundColor: Colors.black45,
-                          child: Icon(Icons.save),
-                          // child:Icon(Icons.add)
-                        )
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                      child: (
-                          Text('Find saved charts',
-                            style: TextStyle(
-                            fontFamily: 'Comfortaa',
-                            fontSize: 16.0,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          )
-                      ),
-                    ),
-                    SizedBox(
-                      height: 90.0,
-                    ),
-                    Center(
-                        child: FloatingActionButton(
-                          heroTag: "btn2",
-                          onPressed: () {
-                            Navigator.push(
-                             context,
-                              MaterialPageRoute(builder: (context)=> Add()),
-                               );
-                          },
-                          tooltip: 'Add new database',
-                          backgroundColor: Colors.black45,
-                          child: Icon(Icons.add),
-                          // child:Icon(Icons.add)
-                        )
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                      child: (
-                          Text('    Add new data to visualize',
-                            style: TextStyle(
-                              fontFamily: 'Comfortaa',
-                              fontSize: 16.0,
-                              color: Colors.teal,
-                              fontWeight: FontWeight.bold,
-                            ),
 
-                          )
-                      ),
-                    ),
-                  ],
-                )
             )
         ),
     );
@@ -406,7 +351,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                          'Time spent on daily tasks',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
+                          'Placements Summary',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
                         SizedBox(height: 10.0,),
                         Expanded(
                           child: charts.PieChart(
@@ -487,12 +432,12 @@ class Pollution {
 
   Pollution(this.year, this.place, this.quantity);
 }
-
 class Task {
   String task;
   int taskvalue;
   Color colorval;
-  String s=",";
+  //String s=",hey bro";
+  //String st=",visualx";
 
   Task(this.task, this.taskvalue, this.colorval);
 }
