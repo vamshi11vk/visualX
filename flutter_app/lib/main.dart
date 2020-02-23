@@ -486,12 +486,11 @@ class Pollution {
 
   Pollution(this.year, this.place, this.quantity);
 }
-hi raa
 class Task {
   String task;
   int taskvalue;
   Color colorval;
-  String s=",";
+  String s=",hey bro";
 
   Task(this.task, this.taskvalue, this.colorval);
 }
