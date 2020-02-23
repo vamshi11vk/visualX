@@ -8,7 +8,7 @@ void main(){
   runApp(MaterialApp(
     home:FirstRoute() ,
   ),
-    );
+  );
 }
 
 /*class MyApp extends StatefulWidget {
@@ -21,155 +21,101 @@ class FirstRoute extends StatelessWidget{
   Widget build(BuildContext context) {
     return
       MaterialApp(theme: ThemeData(
-       // primarySwatch: Colors.white,
-       // backgroundColor: Colors.black,
+        // primarySwatch: Colors.red,
+         //backgroundColor: Colors.black,
       ),
         home: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/one.gif"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.44), BlendMode.dstATop))),
+          //decoration: BoxDecoration(
+          //  image: DecorationImage(
+          //    image: AssetImage("images/one.gif"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.44), BlendMode.dstATop))),
             child: Scaffold(
-                backgroundColor: Colors.transparent,
-                appBar: AppBar(
-                  backgroundColor: Colors.teal,
-                  title: Text('visualX',
-                    style: TextStyle(
-                      fontFamily: 'Comfortaa',
-                      fontSize: 36.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+              backgroundColor: Colors.black12,
+              appBar: AppBar(
+                backgroundColor: Colors.black,
+                title: Text('visualX',
+                  style: TextStyle(
+                    fontFamily: 'Comfortaa',
+                    fontSize: 36.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-        ),
+                ),
+              ),
               drawer: Drawer(
                 // Add a ListView to the drawer. This ensures the user can scroll
                 // through the options in the drawer if there isn't enough vertical
                 // space to fit everything.
                 child: Container(
-                  //color:Colors.black ,
-color:Color.fromRGBO(300, 0, 0, 0.8),
+                 // color:Colors.white ,
+                  color:Color.fromRGBO(0, 0, 0,0.9),
+                  //color: Colors.n,
                   child: ListView(
                     // Important: Remove any padding from the ListView.
                       padding: EdgeInsets.zero,
                       children: <Widget>[
-                  DrawerHeader(
-                  child: Text(''),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("images/graph.jpg"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.70), BlendMode.dstATop)
-                    ),
-                    color: Colors.black,
-                  ),
-              ),
-              ListTile(
-                  title: Text('Item 1',
-                    style: TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 20.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-              ),
-              ListTile(
-                  title: Text('Item 2',
-                    style: TextStyle(
-                      fontFamily: 'Comfortaa',
-                      fontSize: 20.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-              ),
-              ]
-            ),
-                ),
-        ),
-                floatingActionButton: Column
-                  (
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Center(
-                        child: FloatingActionButton(
-                          heroTag: "btn1",
-                          onPressed: () {
+                        DrawerHeader(
+                          child: Text(''),
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("images/bg.jpg"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.30), BlendMode.dstATop)
+                            ),
+                            color: Colors.black,
+                          ),
+                        ),
+                        ListTile(
+                          trailing:Icon(Icons.save),
+                          title: Text('Saved Charts',
+                            style: TextStyle(
+                              fontFamily: 'Comfortaa',
+                              fontSize: 20.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                          onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context)=> HomePage()),
                             );
+                            // Update the state of the app
+                            // ...
+                            // Then close the drawer
+
+                            // Update the state of the app
+                            // ...
+                            // Then close the drawer
+                            //Navigator.pop(context);
                           },
-                          tooltip: 'Saved',
-                          backgroundColor: Colors.black45,
-                          child: Icon(Icons.save),
-                          // child:Icon(Icons.add)
-                        )
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                      child: (
-                          Text('Find saved charts',
-                            style: TextStyle(
-                            fontFamily: 'Comfortaa',
-                            fontSize: 16.0,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          )
-                      ),
-                    ),
-                    SizedBox(
-                      height: 90.0,
-                    ),
-                    Center(
-                        child: FloatingActionButton(
-                          heroTag: "btn2",
-                          onPressed: () {
-                            Navigator.push(
-                             context,
-                              MaterialPageRoute(builder: (context)=> Add()),
-                               );
-                          },
-                          tooltip: 'Add new database',
-                          backgroundColor: Colors.black45,
-                          child: Icon(Icons.add),
-                          // child:Icon(Icons.add)
-                        )
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                      child: (
-                          Text('    Add new data to visualize',
+
+                        ),
+                        ListTile(
+                          trailing:Icon(Icons.add_to_photos),
+                          title: Text('Add new data',
                             style: TextStyle(
                               fontFamily: 'Comfortaa',
-                              fontSize: 16.0,
-                              color: Colors.teal,
+                              fontSize: 20.0,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
-                            ),
+                            ),),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context)=> IconsToClick()),
+                            );
 
-                          )
-                      ),
-                    ),
-                  ],
-                )
+                            // Update the state of the app
+                            // ...
+                            // Then close the drawer
+                            // Navigator.pop(context);
+                          },
+                        ),
+                      ]
+                  ),
+                ),
+              ),
+
             )
         ),
-    );
+      );
   }
 }
 class HomePage extends StatefulWidget {
@@ -213,7 +159,6 @@ class _HomePageState extends State<HomePage> {
       new Task('CMRCET', 240, Color(0xff990099)),
       new Task('CMRIT', 176, Color(0xff109618)),
       new Task('CMREC', 150, Color(0xfffdbe19)),
-      new Task('CMRECS', 150, Color(0xfffdbe19)),
     ];
 
     var linesalesdata = [
@@ -280,13 +225,13 @@ class _HomePageState extends State<HomePage> {
 
     _seriesPieData.add(
       charts.Series(
-        domainFn: (Task task, _) => task.task,
-        measureFn: (Task task, _) => task.taskvalue,
-        colorFn: (Task task, _) =>
-            charts.ColorUtil.fromDartColor(task.colorval),
-        id: 'Air Pollution',
-        data: piedata,
-        labelAccessorFn: (Task row,_) => '${row.taskvalue}${'\n'}${row.task}'
+          domainFn: (Task task, _) => task.task,
+          measureFn: (Task task, _) => task.taskvalue,
+          colorFn: (Task task, _) =>
+              charts.ColorUtil.fromDartColor(task.colorval),
+          id: 'Air Pollution',
+          data: piedata,
+          labelAccessorFn: (Task row,_) => '${row.taskvalue}${'\n'}${row.task}'
       ),
     );
 
@@ -338,145 +283,145 @@ class _HomePageState extends State<HomePage> {
       ),
         home:DefaultTabController(
           length: 3,
-      /*  Container(
+          /*  Container(
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("images/two.jpg"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.14), BlendMode.dstATop))),
          */
           child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.teal,
-            //backgroundColor: Color(0xff308e1c),
-            bottom: TabBar(
-              indicatorColor: Color(0xff9962D0),
-              tabs: [
-                Tab(
-                  icon: Icon(FontAwesomeIcons.solidChartBar),
+            appBar: AppBar(
+              backgroundColor: Colors.black,
+              //backgroundColor: Color(0xff308e1c),
+              bottom: TabBar(
+                indicatorColor: Color(0xff9962D0),
+                tabs: [
+                  Tab(
+                    icon: Icon(FontAwesomeIcons.solidChartBar),
+                  ),
+                  Tab(icon: Icon(FontAwesomeIcons.chartPie)),
+                  Tab(icon: Icon(FontAwesomeIcons.chartLine)),
+                ],
+              ),
+              title: Text('Saved Charts',
+                style: TextStyle(
+                  fontFamily: 'Comfortaa',
+                  fontSize: 25.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
-                Tab(icon: Icon(FontAwesomeIcons.chartPie)),
-                Tab(icon: Icon(FontAwesomeIcons.chartLine)),
+              ),
+              automaticallyImplyLeading: true,
+              leading: IconButton(icon: Icon(Icons.arrow_back_ios),
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                color: Colors.white,
+              ),
+            ),
+            body: TabBarView(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(0.0),
+                  child: Container(
+                    color: Colors.black,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'SO₂ emissions, by world region (in million tonnes)',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
+                          Expanded(
+                            child: charts.BarChart(
+                              _seriesData,
+                              animate: true,
+                              barGroupingType: charts.BarGroupingType.grouped,
+                              //behaviors: [new charts.SeriesLegend()],
+                              animationDuration: Duration(seconds: 5),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(0.0),
+                  child: Container(
+                    color: Colors.black,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'Placements Summary',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
+                          SizedBox(height: 10.0,),
+                          Expanded(
+                            child: charts.PieChart(
+                                _seriesPieData,
+                                animate: true,
+                                animationDuration: Duration(seconds: 5),
+                                behaviors: [
+                                  new charts.DatumLegend(
+                                    outsideJustification: charts.OutsideJustification.endDrawArea,
+                                    horizontalFirst: false,
+                                    desiredMaxRows: 2,
+                                    cellPadding: new EdgeInsets.only(right: 4.0, bottom: 4.0),
+                                    entryTextStyle: charts.TextStyleSpec(
+                                        color: charts.MaterialPalette.purple.shadeDefault,
+                                        fontFamily: 'Comfortaa',
+                                        fontSize: 11),
+                                  )
+                                ],
+                                defaultRenderer: new charts.ArcRendererConfig(
+                                    arcWidth: 100,
+                                    arcRendererDecorators: [
+                                      new charts.ArcLabelDecorator(
+                                          labelPosition: charts.ArcLabelPosition.inside)
+                                    ])),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(0.0),
+                  child: Container(
+                    color: Colors.black,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'Sales for the first 5 years',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
+                          Expanded(
+                            child: charts.LineChart(
+                                _seriesLineData,
+                                defaultRenderer: new charts.LineRendererConfig(
+                                    includeArea: true, stacked: true),
+                                animate: true,
+                                animationDuration: Duration(seconds: 5),
+                                behaviors: [
+                                  new charts.ChartTitle('Years',
+                                      behaviorPosition: charts.BehaviorPosition.bottom,
+                                      titleOutsideJustification:charts.OutsideJustification.middleDrawArea),
+                                  new charts.ChartTitle('Sales',
+                                      behaviorPosition: charts.BehaviorPosition.start,
+                                      titleOutsideJustification: charts.OutsideJustification.middleDrawArea),
+                                  new charts.ChartTitle('Departments',
+                                    behaviorPosition: charts.BehaviorPosition.end,
+                                    titleOutsideJustification:charts.OutsideJustification.middleDrawArea,
+                                  )
+                                ]
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
-            title: Text('Saved Charts',
-    style: TextStyle(
-    fontFamily: 'Comfortaa',
-    fontSize: 25.0,
-    color: Colors.black,
-    fontWeight: FontWeight.bold,
-    ),
-            ),
-            automaticallyImplyLeading: true,
-            leading: IconButton(icon: Icon(Icons.arrow_back_ios),
-              onPressed: (){
-                Navigator.pop(context);
-              },
-              color: Colors.black,
-            ),
           ),
-          body: TabBarView(
-            children: [
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: Container(
-                  color: Colors.black,
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          'SO₂ emissions, by world region (in million tonnes)',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
-                        Expanded(
-                          child: charts.BarChart(
-                            _seriesData,
-                            animate: true,
-                            barGroupingType: charts.BarGroupingType.grouped,
-                            //behaviors: [new charts.SeriesLegend()],
-                            animationDuration: Duration(seconds: 5),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: Container(
-                  color: Colors.black,
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          'Time spent on daily tasks',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10.0,),
-                        Expanded(
-                          child: charts.PieChart(
-                              _seriesPieData,
-                              animate: true,
-                              animationDuration: Duration(seconds: 5),
-                              behaviors: [
-                                new charts.DatumLegend(
-                                  outsideJustification: charts.OutsideJustification.endDrawArea,
-                                  horizontalFirst: false,
-                                  desiredMaxRows: 2,
-                                  cellPadding: new EdgeInsets.only(right: 4.0, bottom: 4.0),
-                                  entryTextStyle: charts.TextStyleSpec(
-                                      color: charts.MaterialPalette.purple.shadeDefault,
-                                      fontFamily: 'Comfortaa',
-                                      fontSize: 11),
-                                )
-                              ],
-                              defaultRenderer: new charts.ArcRendererConfig(
-                                  arcWidth: 100,
-                                  arcRendererDecorators: [
-                                    new charts.ArcLabelDecorator(
-                                        labelPosition: charts.ArcLabelPosition.inside)
-                                  ])),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(0.0),
-                child: Container(
-                  color: Colors.black,
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          'Sales for the first 5 years',style: TextStyle(fontFamily: 'Comfortaa',color:Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold),),
-                        Expanded(
-                          child: charts.LineChart(
-                              _seriesLineData,
-                              defaultRenderer: new charts.LineRendererConfig(
-                                  includeArea: true, stacked: true),
-                              animate: true,
-                              animationDuration: Duration(seconds: 5),
-                              behaviors: [
-                                new charts.ChartTitle('Years',
-                                    behaviorPosition: charts.BehaviorPosition.bottom,
-                                    titleOutsideJustification:charts.OutsideJustification.middleDrawArea),
-                                new charts.ChartTitle('Sales',
-                                    behaviorPosition: charts.BehaviorPosition.start,
-                                    titleOutsideJustification: charts.OutsideJustification.middleDrawArea),
-                                new charts.ChartTitle('Departments',
-                                  behaviorPosition: charts.BehaviorPosition.end,
-                                  titleOutsideJustification:charts.OutsideJustification.middleDrawArea,
-                                )
-                              ]
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-      ),
         ),
-    );
+      );
   }
 }
 
@@ -487,12 +432,12 @@ class Pollution {
 
   Pollution(this.year, this.place, this.quantity);
 }
-
 class Task {
   String task;
   int taskvalue;
   Color colorval;
-  String s=",";
+  //String s=",hey bro";
+  //String st=",visualx";
 
   Task(this.task, this.taskvalue, this.colorval);
 }
@@ -503,7 +448,7 @@ class Sales {
 
   Sales(this.yearval, this.salesval);
 }
-  /*@override
+/*@override
   Widget build(BuildContext context) {
     return
       MaterialApp(theme: ThemeData(
@@ -539,7 +484,6 @@ class Sales {
                   ),
                 //),
             ),
-
               )
         ),
       );
@@ -582,6 +526,56 @@ class Add extends StatelessWidget{
       );
   }
 }
+class IconsToClick extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return
+      MaterialApp(theme: ThemeData(
+        // primarySwatch: Colors.red,
+        //backgroundColor: Colors.black,
+      ),
+        home: Container(
+          //decoration: BoxDecoration(
+          //  image: DecorationImage(
+          //    image: AssetImage("images/one.gif"), fit: BoxFit.cover, colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.44), BlendMode.dstATop))),
+            child: Scaffold(
+              backgroundColor: Colors.black12,
+              appBar: AppBar(
+                backgroundColor: Colors.black,
+                title: Text('Saved Charts',
+                  style: TextStyle(
+                    fontFamily: 'Comfortaa',
+                    fontSize: 36.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+                body: Padding(
+                  padding: const EdgeInsets.only(left:5.0,top:20.0,right:2.0 ,bottom: 350.0),
+                  child: Center(
+                  child: CircleAvatar(
+    backgroundImage: ExactAssetImage('images/cmr.jpg'),
+    minRadius: 60,
+    maxRadius: 70,
+                    child: FlatButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=> HomePage()),
+                        );
+                      },
+                      focusColor: Colors.transparent,
+                    ),
+    ),
+              ),
+                ),
+        ),
+        ),
+      );
+  }
+}
+
 
 
 
@@ -600,7 +594,6 @@ class Add extends StatelessWidget{
 
 
 /*void main() => runApp(MyApp());
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -615,19 +608,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
   final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
       _counter++;
